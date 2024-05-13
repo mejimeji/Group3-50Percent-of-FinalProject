@@ -1,94 +1,96 @@
 package StudentManage;
 
+//Christian Harvey G. Capili
+//BSIT 2-1
+
 import java.awt.*;
 import java.awt.Font;
 import java.awt.event.*;
 import javax.swing.*;
 
-/**
- *
- * @author Edmundo Dela Cruz
- */
 public class StudentInterface implements ActionListener {
     
-    private JFrame f = new JFrame("Student Login");
-    private JLabel lblUsername, lblPassword, lblLoginResults;
-    private JTextField txtfldUsername = new JTextField();
-    private JPasswordField psswrdfldPassword = new JPasswordField();
-    private JButton btnLogIn, btnReset;
-    private JTextArea txtareaLoginResults = new JTextArea();
-
+    private JFrame frame = new JFrame("STUDENT MANAGEMENT SYSTEM");
+    private JLabel LabelUsername, LabelPassword, LabelLoginResults, LabelLogo;
+    private JTextField TextFieldUsername = new JTextField();
+    private JPasswordField PasswordFieldPassword = new JPasswordField();
+    private JButton ButtonLogin, ButtonReset;
+    private JTextArea TextAreaLoginResults = new JTextArea();
+    private ImageIcon Logo;
     
     StudentInterface(){
     
-    f.setSize(350, 400);
-    f.setLayout(null);
-    f.setDefaultCloseOperation(f.EXIT_ON_CLOSE);
+    frame.setSize(600, 570);
+    frame.setLayout(null);
+    frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+    frame.getContentPane().setBackground(new java.awt.Color(179, 179, 255));
+    
+    Logo = new ImageIcon("C:\\Users\\Harvey\\OneDrive\\Documents\\NetBeansProjects\\StudentManagementSystem\\src\\StudentManagementLogo\\STUDENTMANAGEMENTLOGO (1).png");
+    LabelLogo = new JLabel(Logo);
+    LabelLogo.setBounds(45,20,497,320);
+    
+    LabelUsername = new JLabel("ADMIN USER:");
+    LabelUsername.setBounds(160, 360, 180, 30);
+    LabelUsername.setFont(new Font("Arial", Font.BOLD, 15));
     
     
-    lblUsername = new JLabel("STUDENT NO.:");
-    lblUsername.setBounds(20, 50, 180, 30);
-    lblUsername.setFont(new Font("Arial", Font.BOLD, 15));
+    LabelPassword = new JLabel("PASSWORD:");
+    LabelPassword.setBounds(160, 400, 180, 30);
+    LabelPassword.setFont(new Font("Arial", Font.BOLD, 15));
     
     
-    lblPassword = new JLabel("PASSWORD:");
-    lblPassword.setBounds(20, 100, 180, 30);
-    lblPassword.setFont(new Font("Arial", Font.BOLD, 15));
+    TextFieldUsername.setBounds(290, 360, 150,30);
+    TextFieldUsername.setFont(new Font("Arial", Font.PLAIN, 15));
     
     
-    txtfldUsername.setBounds(160, 50, 150,30);
-    txtfldUsername.setFont(new Font("Arial", Font.PLAIN, 15));
+    PasswordFieldPassword.setBounds(290, 400, 150,30);
+    PasswordFieldPassword.setFont(new Font("Arial", Font.PLAIN, 15));
     
     
-    psswrdfldPassword.setBounds(160, 100, 150,30);
-    psswrdfldPassword.setFont(new Font("Arial", Font.PLAIN, 15));
-    
-    
-    btnLogIn = new JButton("Login");
-    btnLogIn.setBounds(50, 150, 100, 30);
-    btnLogIn.setFont(new Font("Arial", Font.PLAIN, 15));
-    btnLogIn.addActionListener(this);
+    ButtonLogin = new JButton("Login");
+    ButtonLogin.setBounds(200, 450, 100, 30);
+    ButtonLogin.setFont(new Font("Arial", Font.PLAIN, 15));
+    ButtonLogin.addActionListener(this);
    
     
-    btnReset = new JButton("Clear");
-    btnReset.setBounds(180, 150, 100, 30);
-    btnReset.setFont(new Font("Arial", Font.PLAIN, 15));
-    btnReset.addActionListener(this);
+    ButtonReset = new JButton("Clear");
+    ButtonReset.setBounds(310, 450, 100, 30);
+    ButtonReset.setFont(new Font("Arial", Font.PLAIN, 15));
+    ButtonReset.addActionListener(this);
     
     
-    lblLoginResults = new JLabel("");
-    lblLoginResults.setBounds(20, 200, 480, 30);
-    lblLoginResults.setFont(new Font("Arial", Font.PLAIN, 15));
-    
-  
-    
-    f.add(lblUsername);
-    f.add(lblPassword);
-    f.add(txtfldUsername);
-    f.add(psswrdfldPassword);
-    f.add(btnLogIn);
-    f.add(btnReset);
-    f.add(lblLoginResults);
-    f.add(txtareaLoginResults);
-   
-    f.setVisible(true);
-    f.setResizable(false);
+    LabelLoginResults = new JLabel("");
+    LabelLoginResults.setBounds(20, 200, 480, 30);
+    LabelLoginResults.setFont(new Font("Arial", Font.PLAIN, 15));
         
-        
-        
+    
+    
+    frame.add(LabelUsername);
+    frame.add(LabelPassword);
+    frame.add(TextFieldUsername);
+    frame.add(PasswordFieldPassword);
+    frame.add(ButtonLogin);
+    frame.add(ButtonReset);
+    frame.add(LabelLoginResults);
+    frame.add(TextAreaLoginResults);   
+    frame.setVisible(true);
+    frame.setResizable(false);    
+    frame.add(LabelLogo);
+    
     }
     @Override
     public void actionPerformed(ActionEvent e){
-        if(e.getSource() == btnLogIn){
-           String username = txtfldUsername.getText();
-           String password = psswrdfldPassword.getText();
-           lblLoginResults.setText("Meron ka bang lemon, gusto ko ng tequila!!");
-           txtareaLoginResults.setText("Your username is: "+username+"\nPassword is: "+password);
-        }else if(e.getSource() == btnReset){
-           txtfldUsername.setText("");
-           psswrdfldPassword.setText("");
-           lblLoginResults.setText("");
-           txtareaLoginResults.setText("");         
+        if(e.getSource() == ButtonLogin){
+           frame.dispose();
+           StudentRecord record = new StudentRecord();
+                                         
+        }
+        
+        else if(e.getSource() == ButtonLogin){
+           TextFieldUsername.setText("");
+           PasswordFieldPassword.setText("");
+           LabelLoginResults.setText("");
+           TextAreaLoginResults.setText("");         
         }
         
     }
