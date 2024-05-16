@@ -81,9 +81,9 @@ public class StudentInterface implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == ButtonLogin){
-           frame.dispose();
-           StudentRecord record = new StudentRecord();
-                                         
+          frame.dispose();
+          StudentRecord record = new StudentRecord();
+           //still working on this part                             
         }
         
         else if(e.getSource() == ButtonLogin){

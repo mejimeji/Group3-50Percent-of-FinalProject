@@ -12,54 +12,52 @@ import java.awt.*;
 
 public class StudentRecord implements ActionListener {
     
-    private JPanel header,footer;
-    private JFrame frame = new JFrame ("STUDENT RECORD");
-    private JTable table;
-    private DefaultTableModel model;
-    private JButton addButton, deleteButton;  
+    private JPanel Header,Footer; //still working on this part
+    private JFrame Frame = new JFrame ("STUDENT RECORD");
+    private JTable Table;
+    private DefaultTableModel Model;
+    private JButton AddButton, DeleteButton;  
     
     public StudentRecord() {
         
         String[] StudentInfo = { "Student No.", "Last Name", "First Name", "Middle Name", "Age", "English", "Mathematics", "Science" };
 
-        model = new DefaultTableModel(StudentInfo, 0);        
-        table = new JTable(model);        
+        Model = new DefaultTableModel(StudentInfo, 0);        
+        Table = new JTable(Model);        
                                                 
-        addButton = new JButton("Add Student");
-        addButton.addActionListener(this);
-        addButton.setBackground(Color.LIGHT_GRAY);
+        AddButton = new JButton("Add Student");
+        AddButton.addActionListener(this);
+        AddButton.setBackground(Color.LIGHT_GRAY);
         
-        deleteButton = new JButton("Delete Student");
-        deleteButton.addActionListener(this);
-        deleteButton.setBackground(Color.LIGHT_GRAY);
+        DeleteButton = new JButton("Delete Student");
+        DeleteButton.addActionListener(this);
+        DeleteButton.setBackground(Color.LIGHT_GRAY);
         
-        JScrollPane scrollPane = new JScrollPane(table);
+        JScrollPane scrollPane = new JScrollPane(Table);
         JPanel buttonPanel = new JPanel();
-        buttonPanel.add(addButton);
-        buttonPanel.add(deleteButton);
+        buttonPanel.add(AddButton);
+        buttonPanel.add(DeleteButton);
           
-        frame.add(scrollPane, java.awt.BorderLayout.CENTER);
-        frame.add(buttonPanel, java.awt.BorderLayout.SOUTH);      
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);     
-        frame.getContentPane().setBackground(new java.awt.Color(66,62,173));  
-        frame.setVisible(true);
-        frame.setBounds(0,100,600,570);
-               
- 
+        Frame.add(scrollPane, java.awt.BorderLayout.CENTER);
+        Frame.add(buttonPanel, java.awt.BorderLayout.SOUTH);      
+        Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);     
+        Frame.getContentPane().setBackground(new java.awt.Color(66,62,173));  
+        Frame.setVisible(true);
+        Frame.setBounds(0,100,600,570);                
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == addButton) {
+        if (e.getSource() == AddButton) {
 
-            model.addRow(new Object[model.getColumnCount()]);
-        } else if (e.getSource() == deleteButton) {
+            Model.addRow(new Object[Model.getColumnCount()]);
+        } else if (e.getSource() == DeleteButton) {
 
-            int selectedRow = table.getSelectedRow();
+            int selectedRow = Table.getSelectedRow();
             if (selectedRow != -1) {
-                model.removeRow(selectedRow);
+                Model.removeRow(selectedRow);
         } else {
-                JOptionPane.showMessageDialog(frame, "Select a row to delete!");
-            }
+                JOptionPane.showMessageDialog(Frame, "Select a row to delete!");
+        }
         }
     }
 }
