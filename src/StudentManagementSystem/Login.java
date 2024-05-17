@@ -22,6 +22,8 @@ import javax.swing.SwingConstants;
  * @author User
  */
 public class Login implements ActionListener {
+     
+    // Adding all components
     
     JFrame frame = new JFrame();
     JLabel messageLabel = new JLabel("TECHNOVA INSTITUTE OF COMPUTER STUDIES");
@@ -66,6 +68,7 @@ public class Login implements ActionListener {
         messageLabel.setHorizontalTextPosition(SwingConstants.CENTER);
         panel.add(messageLabel);
         
+        //Declaring the component's location
         usernameLabel.setBounds(150, 100, 75, 25);
         panel.add(usernameLabel);
         
