@@ -4,10 +4,7 @@
  */
 package StudentManagementSystem;
 
-/**
- *
- * @author User
- */
+
 public class Main {
     public static void main (String[]args){
         

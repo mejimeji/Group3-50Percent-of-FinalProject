@@ -8,11 +8,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-/**
- *
- * @author User
- */
+
 public class WelcomePage implements ActionListener {
+    
     
    JFrame frame = new JFrame();
    JLabel welcomeLabel = new JLabel("WELCOME TO");
@@ -21,6 +19,7 @@ public class WelcomePage implements ActionListener {
    JButton studentButton = new JButton("STUDENT RECORD");
    JButton gradeButton = new JButton("GRADE");
    JButton attendanceButton = new JButton("ATTENDANCE");
+   
    
     WelcomePage(){
        
@@ -52,6 +51,7 @@ public class WelcomePage implements ActionListener {
         selectLabel.setHorizontalTextPosition(SwingConstants.CENTER);
         panel.add(selectLabel);
         
+        //Buttons
         studentButton.setBounds(50, 150,panel.getWidth()-100, 25);
         studentButton.setFocusable(false);
         studentButton.addActionListener(this);
