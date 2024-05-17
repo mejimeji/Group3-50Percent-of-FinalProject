@@ -37,6 +37,7 @@ public class Login implements ActionListener {
     HashMap<String,String> login = new HashMap<String,String>();
    
     Login(HashMap<String,String> loginOriginal){
+        //Add all components in JFrame
         
         login = loginOriginal;
         
@@ -100,7 +101,7 @@ public class Login implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-     
+        
         if(e.getSource()==resetButton) {
             usernameField.setText("");
             passwordField.setText("");
