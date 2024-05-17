@@ -88,7 +88,7 @@ public class Login implements ActionListener {
         resetButton.addActionListener(this);
         panel.add(resetButton);
         
-        messagesLabel.setBounds(50,250,panel.getWidth()-100,25);
+        messagesLabel.setBounds(180,250,panel.getWidth()-100,25);
         messagesLabel.setHorizontalTextPosition(SwingConstants.CENTER);
         panel.add(messagesLabel);
         
