@@ -5,10 +5,8 @@
 package StudentManagementSystem;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import javax.swing.*;
-
 
 /**
  *
@@ -86,6 +84,23 @@ public class WelcomePage implements ActionListener {
     }
    @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == studentButton){
+            frame.dispose();
+            StudentRecord record = new StudentRecord();
+                }
         
+        else if(e.getSource() == gradeButton){
+            frame.dispose();
+            StudentGrade grade = new StudentGrade();
+                }
+        
+        else if(e.getSource() == attendanceButton){
+            frame.dispose();
+            StudentAttendance attendance = new StudentAttendance();
+                }
+        else {
+        System.out.println("Unexpected button clicked!");
+    }
     }
 }
+
