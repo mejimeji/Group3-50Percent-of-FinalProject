@@ -28,6 +28,8 @@ public class WelcomePage implements ActionListener {
         frame.setLayout(null);
         frame.setVisible(true);
         frame.getContentPane().setBackground(Color.blue);
+        
+        
               
         JPanel panel = new JPanel();
         panel.setLayout(null);
